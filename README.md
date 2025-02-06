@@ -16,7 +16,7 @@ This dataset originates from the University of Wisconsin Hospitals, Madison and 
 
 The following techniques are applied to analyze and preprocess the dataset:
 
-### 1️⃣ Data Exploration & Cleaning
+### 📊 Step 1: Exploratory Data Analysis (EDA)
 
 - Reading the dataset (pandas)
 
@@ -26,31 +26,54 @@ The following techniques are applied to analyze and preprocess the dataset:
 
 - Understanding feature distributions
 
-### 2️⃣ Exploratory Data Analysis (EDA)
+- 📍 **Notebook:** [01_EDA.ipynb](notebooks/01_EDA.ipynb)
 
-📈 Visualizations Used:
+### 📊 Step 2: Comparing Dimensionality Reduction Techniques
 
-- Bar Plots: Diagnosis distribution
+| **Method** | **Components** | **Used For** |
+|------------|--------------|--------------|
+| PCA | 2D | Train-Test Splitting & Visualization |
+| MDS | 2D,3D | Visualization |
+| t-SNE | 2D,3D | Visualization |
+| UMAP | 2D,3D | Visualization |
 
-- Histograms: Feature distributions
+- 📍 **Notebook:** [02_All_Dim_Reduction.ipynb](notebooks/02_All_Dim_Reduction.ipynb)
+- **Includes:** Scatter plots & visual comparisons of all techniques.
 
-- Box Plots: Outlier detection
+### 📊 Step 3: Dimensionality reduction - Model Comparison
 
-- Grouped Bar Plots: Comparing features across diagnoses
+- The **best dimensionality reduction techniques** are selected based on:
+  - **Silhouette Score**
+  - **Stress (for MDS)**
+  - **Correlation with original distances**
+  - **Classification Accuracy (Random Forest)**
+- The final **Random Forest classification model** is trained on:
+  - **PCA (2D) → Performed Poorly**
+  - **MDS (3D) → Best Performance**
+  - **t-SNE (2D) → Near-optimal Performance**
+  - **UMAP (3D) → Strong Alternative**
 
-- Heatmaps: Feature correlation analysis
+**📊 Final Accuracy Results:**
+| **Method** | **Classification Accuracy (%)** |
+|------------|-------------------------------|
+| **PCA (2D)** | **54.4%** ❌ |
+| **t-SNE (2D)** | **92.9%** ✅ |
+| **UMAP (3D)** | **91.8%** ✅ |
+| **MDS (3D)** | **93.5%** ✅ |
 
-- Cluster Maps: Hierarchical relationships in data
+📍 **Notebook:** [03_Best_Models_DR.ipynb](notebooks/03_Best_Models_DR.ipynb)
 
-- Pair Plots: Feature interaction visualization
+---
 
-### 3️⃣ Feature Engineering & Preprocessing (Upcoming)
+## **🛠 How to Run This Project**
 
-- Standardization (Scaling Features)
+### **1️⃣ Install Requirements**
 
-- Dimensionality Reduction (PCA - Principal Component Analysis)
+```bash
+pip install -r requirements.txt
+```
 
-## 🚀 How to Use
+
 
 1. Download Dataset
 
@@ -94,9 +117,7 @@ This project was developed by Henry Serpa, as part of practicing Data Science co
 
 ## ✅ Future Updates
 
-📌 Feature Scaling
-
-📌 Dimensionality Reduction (PCA)
+📌 Classification models
 
 📌 Machine Learning Models (Logistic Regression, Random Forest, etc.)
 

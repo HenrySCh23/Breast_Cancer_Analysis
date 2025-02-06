@@ -67,7 +67,7 @@ The following techniques are applied to analyze and preprocess the dataset:
 ## 📌 Best Dimensionality Reduction: MDS (3D → 2D)
 Below is the final decision boundary for MDS (3D reduced to 2D), which gave the highest classification accuracy.
 
-![MDS Decision Boundary](images/MDS_3D_to_2D_Decision_Boundary.png)
+![MDS Decision Boundary](images/MDS_3D_to_2D.png)
 
 ---
 

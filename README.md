@@ -53,7 +53,7 @@ The following techniques are applied to analyze and preprocess the dataset:
   - **t-SNE (2D) → Near-optimal Performance**
   - **UMAP (3D) → Strong Alternative**
 
-**📊 Final Accuracy Results:**
+### **📊 Final Accuracy Results:**
 | **Method** | **Classification Accuracy (%)** |
 |------------|-------------------------------|
 | **PCA (2D)** | **54.4%** ❌ |
@@ -62,6 +62,12 @@ The following techniques are applied to analyze and preprocess the dataset:
 | **MDS (3D)** | **93.5%** ✅ |
 
 📍 **Notebook:** [03_Best_Models_DR.ipynb](notebooks/03_Best_Models_DR.ipynb)
+
+
+## 📌 Best Dimensionality Reduction: MDS (3D → 2D)
+Below is the final decision boundary for MDS (3D reduced to 2D), which gave the highest classification accuracy.
+
+![MDS Decision Boundary](images/MDS_3D_to_2D_Decision_Boundary.png)
 
 ---
 
